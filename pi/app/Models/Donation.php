@@ -15,4 +15,12 @@ class Donation extends Model
     ];
 
     protected $dates = ['date'];
+
+    /**
+     * Get the phone associated with the user.
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

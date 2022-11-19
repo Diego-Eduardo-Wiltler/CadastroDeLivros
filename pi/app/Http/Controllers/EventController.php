@@ -48,6 +48,7 @@ class EventController extends Controller
         $donation->email = $request->email;
         $donation->description = $request->description;
         $donation->items = $request->items;
+        $donation->user_id = auth()->user()->id;
 
         //image upload
         if ($request->hasfile('image') && $request->file('image')->isValid()) {
@@ -69,14 +70,16 @@ class EventController extends Controller
 
     public function show($id){
         $donation = Donation::findOrFail($id);
-        return view('events.show', ['event' =>$donation]);
+        return view('events.show', ['donation' =>$donation]);
     }
 
     public function dashboard(){
+        //dd(auth()->user()->id);
         $user = auth()->user();
 
-        $events  = $user->events;
-        return view('events.dashboard', ['events' => $events]);
+        $donations  = $user->donations;
+        //dd($donations);
+        return view('events.dashboard', ['donations' => $donations]);
 
     }
 }

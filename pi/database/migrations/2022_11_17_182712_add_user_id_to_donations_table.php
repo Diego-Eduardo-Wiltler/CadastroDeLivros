@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('donations', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+        });
+        Schema::table('donations', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 
