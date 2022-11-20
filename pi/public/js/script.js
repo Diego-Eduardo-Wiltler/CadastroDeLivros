@@ -53,3 +53,12 @@ if (autoplay) {
 tinyslider.addEventListener("mouseover", function () {
     clearInterval();
 });
+
+const urlParams = new URLSearchParams(window.location.search);
+const pageParam = urlParams.get("page");
+console.log(pageParam);
+
+if (pageParam > 1) {
+    const element = document.getElementById("all-books");
+    element.scrollIntoView(true);
+}

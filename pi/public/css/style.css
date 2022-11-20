@@ -229,7 +229,7 @@ header{
     display: inline-block;
     border: 2px solid;
     border-radius: 14px;
-    margin-right: 14%;
+    margin-right: 12%;
     -webkit-border-radius: 14px;
     -moz-border-radius: 14px;
     -ms-border-radius: 14px;
@@ -293,6 +293,22 @@ header{
 
 .tinyslider .nav a:hover{
     background: rgb(255, 255, 255);
+}
+
+.pagination .active>.page-link {
+    background-color: #ff910b !important;
+    border-color: rgb(152, 152, 152);
+}
+
+
+.pagination .page-link {
+    color: black;
+    border-color: rgb(152, 152, 152);
+}
+
+.pagination .page-link:hover {
+    background-color: #ffb862 !important;
+    color: black;
 }
 
 footer{

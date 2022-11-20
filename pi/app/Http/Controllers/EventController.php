@@ -12,18 +12,18 @@ class EventController extends Controller
         
         $search = request('search');
         if($search){
-            $donations = Donation::where([
+            $query = Donation::where([
                 ['title' , 'like', '%'.$search.'%']
-            ])->get();
+            ]);
 
-        }elseif($search){
-            $donations = Donation::where([
-                ['category','like', '%'.$search.'%']
-            ])->get();
         }else{
-            $donations = Donation::all();
+            $query = Donation::query();
         }
-        return view('welcome', ['donations' =>$donations, 'search' => $search]);
+
+        $paginatedDonations=with(clone $query)->paginate(10);
+        $donations = $query->get();
+        
+        return view('welcome', compact('donations','search','paginatedDonations'));
    
     }
 
@@ -40,12 +40,10 @@ class EventController extends Controller
 
         $donation = new Donation;
         $donation->title = $request->title;
-        $donation->date = $request->date;
         $donation->category = $request->category;
         $donation->city = $request->city;
         $donation->cep = $request->cep;
         $donation->phone = $request->phone;
-        $donation->email = $request->email;
         $donation->description = $request->description;
         $donation->items = $request->items;
         $donation->user_id = auth()->user()->id;
@@ -70,7 +68,7 @@ class EventController extends Controller
 
     public function show($id){
         $donation = Donation::findOrFail($id);
-        return view('events.show', ['donation' =>$donation]);
+        return view('events.show', compact('donation'));
     }
 
     public function dashboard(){
@@ -79,7 +77,9 @@ class EventController extends Controller
 
         $donations  = $user->donations;
         //dd($donations);
-        return view('events.dashboard', ['donations' => $donations]);
+        return view('events.dashboard', compact('donations'));
 
     }
+
+
 }

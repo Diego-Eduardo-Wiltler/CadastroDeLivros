@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('donations', function (Blueprint $table) {
             $table->string('image');
+            
         });
     }
 

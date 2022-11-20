@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('city');
             $table->integer('cep');
             $table->string('phone');
-            $table->string('email');
             $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
