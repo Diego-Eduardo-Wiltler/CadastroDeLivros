@@ -84,6 +84,7 @@ header{
 #books-container{
     display:inline-block;
     padding: 50px;
+    padding-bottom: 0;
 }
 
 #books-container h2{
@@ -211,6 +212,89 @@ header{
 #items-list li{
     display: flex;
 }
+.tinyslider { 
+    position: relative; 
+    overflow: hidden; 
+    max-width: 100%; 
+    width: 100%; 
+}
+
+
+.tinyslider  .card{
+  border: none;
+   
+}
+
+.innerborder{
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 14px;
+    margin-right: 14%;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+    border-color: #a9a9a9;
+}
+
+
+
+.tinyslider  img{
+    max-height: 210px;
+    min-height: 210px;
+    max-width: 210px;
+    min-width: 210px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.tinyslider .tinyslide { 
+    padding: 0.5%;
+    max-width: 50%;
+    border-radius: 10px ;
+    float: left;
+}
+.tinyslider .slides { transition: 1s ease; }
+.tinyslider .nav {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    font-family: monospace;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tinyslider .nav .nav-prev {
+    position: absolute;
+    left: 15px;
+    display: block;
+}
+.tinyslider .nav .nav-next {
+    position: absolute;
+    right: 55px;
+}
+.tinyslider .nav a {
+    background: rgb(255, 255, 255, 50%);
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #4d4b4b;
+    
+}
+
+.tinyslider .nav a:hover{
+    background: rgb(255, 255, 255);
+}
+
 footer{
     text-align: center;
     background-color: #ff910b;
@@ -224,3 +308,12 @@ footer{
 footer p{
     margin-bottom: 0;
 }
+
+
+
+
+
+
+
+
+
