@@ -228,12 +228,12 @@ header{
 .innerborder{
     display: inline-block;
     border: 2px solid;
-    border-radius: 14px;
-    margin-right: 12%;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -o-border-radius: 14px;
+    border-radius: 16px;
+    margin-right: 9%;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
     border-color: #a9a9a9;
 }
 
