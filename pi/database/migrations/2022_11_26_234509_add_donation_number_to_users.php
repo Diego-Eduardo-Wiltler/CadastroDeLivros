@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->text('description');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('donation_number')->default(0);
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('donation_number');
+        });
     }
 };

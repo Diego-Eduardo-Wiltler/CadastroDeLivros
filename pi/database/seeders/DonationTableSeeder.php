@@ -17,11 +17,9 @@ class DonationTableSeeder extends Seeder
     {
        Donation::create([
         "title" => "A",
-        "city" => "Leme",
-        "cep" => 13611209,
-        "phone" => "19989550027",
         "description" => "sdasdasd",
-        "category" => "Lirico",
+        "author" => "AAAA",
+        "category" => "1",
         "image" => "d7b9dcd9618a0435b69328c69c12bc5a.jpg",
         "items" => "['Possui rasuras']",
         "user_id" => 1,

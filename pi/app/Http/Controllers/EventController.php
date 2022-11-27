@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use  App\Models\Donation;
+
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreDonation;
 
 class EventController extends Controller
 {
@@ -36,18 +37,16 @@ class EventController extends Controller
     }
 
 
-    public function store(Request $request){
-
+    public function store(StoreDonation $request){
+        
         $donation = new Donation;
         $donation->title = $request->title;
+        $donation->author = $request->author;
         $donation->category = $request->category;
-        $donation->city = $request->city;
-        $donation->cep = $request->cep;
-        $donation->phone = $request->phone;
         $donation->description = $request->description;
         $donation->items = $request->items;
         $donation->user_id = auth()->user()->id;
-
+      
         //image upload
         if ($request->hasfile('image') && $request->file('image')->isValid()) {
             

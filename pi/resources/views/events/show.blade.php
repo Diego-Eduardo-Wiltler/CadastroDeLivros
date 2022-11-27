@@ -11,13 +11,13 @@
             <div id="info-container" class="col-md-6">
                 <h1> {{ $donation->title }}</h1>
                 <p class="donation-city">
-                    <ion-icon name="pin"></ion-icon>{{ $donation->city }}
+                    <ion-icon name="pin"></ion-icon>{{ auth()->user()->city }}
                 </p>
                 <p class="donation-interested">
                     <ion-icon name="people"></ion-icon> x interessados
                 </p>
                 <p class="donation-owner">
-                    <ion-icon name="bookmarks"></ion-icon> Dono do livro
+                    <ion-icon name="bookmarks"></ion-icon>{{ auth()->user()->name }}
                 </p>
                 <a href="#" class="btn btn-primary" id="donation-submit">Desejo o livro</a>
                 <h3>Informações adicionais do livro</h3>

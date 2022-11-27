@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->text('description');
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        DB::unprepared('CREATE TRIGGER donation_created AFTER INSERT ON `donations` FOR EACH ROW
+
+        BEGIN
+
+           CALL update_users_donation_number(NEW.user_id);
+
+        END');
     }
 
     /**
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        DB::unprepared('DROP TRIGGER `donation_created`');
     }
 };
