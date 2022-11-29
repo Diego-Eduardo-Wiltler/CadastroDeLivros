@@ -46,7 +46,8 @@ class EventController extends Controller
         $donation->description = $request->description;
         $donation->items = $request->items;
         $donation->user_id = auth()->user()->id;
-      
+        
+
         //image upload
         if ($request->hasfile('image') && $request->file('image')->isValid()) {
             
@@ -80,5 +81,8 @@ class EventController extends Controller
 
     }
 
-
+    public function destroy($id){
+        Event::findOrFail($id)->delete();
+        return view('/dashboard')->with('msg', 'Doação Excluida com sucesso');
+    }
 }

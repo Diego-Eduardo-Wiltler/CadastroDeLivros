@@ -14,23 +14,26 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Intereçados</th>
+                        <th scope="col">Interessados</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
+                <tbody>
+                    @foreach ($donations as $donation)
+                        <tr>
+                            <th scope="row">{{ $loop->index + 1 }}</th>
+                            <td><a href="/events/{{ $donation->id }}">{{ $donation->title }}</a></td>
+                            <td>0 </td>
+                            <td>
+                                <a href="#" class="btn btn-info edit-btn">
+                                    Editar
+                                </a>
+                                <a href="#">Deletar</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
-            <tbody>
-                @foreach ($donations as $donation)
-                    <tr>
-                        <th scope="row">{{ $loop->index + 1 }}</th>
-                        <td><a href="/events/{{ $donation->id }}">{{ $donation->title }}</a></td>
-                        <td>
-                            <a href="#">Editar</a>
-                            <a href="#">Deletar</a>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
         @else
             <p>Você ainda não tem livros <a href="/events/donation">Doar Livro</a></p>
         @endif

@@ -315,6 +315,15 @@ header{
     color: black;
 }
 
+/*Dashboard*/
+.dashboard-title-container{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-donations-container th{
+    width: 25%;
+}
 footer{
     text-align: center;
     background-color: #ff910b;
