@@ -1,6 +1,7 @@
   <h3>Tópicos que serão encontrados nesse repositório<br></h3>
   • Códigos em PHP;<br>
   • Utilização do Framework: Laravel;<br>
+  • Utilização de: Node e LiveWire;<br>
   • DER(Diagramas Entidade - Relacionamento) feitos no BrModelo;<br>
   • Banco de dados com Views, Triggers, Functions e Procedures;<br>
   • Documentação de Software;<br>
